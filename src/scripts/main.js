@@ -6,7 +6,11 @@ const largeImage = document.querySelector('.gallery__large-img');
 list.addEventListener('click', (e) => {
   e.preventDefault();
 
-  const linkAddress = e.target.parentNode.href;
+  const isThumb = e.target.classList.contains('gallery__thumb');
 
-  largeImage.src = linkAddress;
+  if (isThumb) {
+    const linkAddress = e.target.parentNode.href;
+
+    largeImage.src = linkAddress;
+  }
 });
